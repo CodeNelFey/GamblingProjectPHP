@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($password === $confirm_password) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $db->prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)");
+        $stmt = $db->prepare("INSERT INTO user (name, email, password, money) VALUES (?, ?, ?, 1000)");
         $stmt->execute([$username, $email, $hashed_password]);
         header('Location: login.php');
         exit();
