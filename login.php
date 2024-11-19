@@ -27,7 +27,11 @@ session_start();
                 </div>
                 <div class="input-group">
                     <label for="password">Mot de passe :</label>
-                    <input type="password" name="password" id="password" required>
+                    <div class="password">
+                        <input type="password" name="password" id="password" required>
+                        <img id="view_fill" src="./imgs/View_fill.svg" alt="View" style="display: block;">
+                        <img id="view_hide_fill" src="./imgs/View_hide_fill.svg" alt="Hide" style="display: none;">
+                    </div>
                     <div class="forgot">
                         <a rel="noopener noreferrer" href="forgot_password.php">Mot de passe oublié ?</a>
                     </div>
@@ -69,6 +73,30 @@ session_start();
     }
     ?>
 </div>
+
+<script>
+    document.getElementById('view_fill').addEventListener('click', function() {
+        var passwordInput = document.getElementById('password');
+        var viewFill = document.getElementById('view_fill');
+        var viewHideFill = document.getElementById('view_hide_fill');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            viewFill.style.display = 'none';
+            viewHideFill.style.display = 'block';
+        }
+    });
+
+    document.getElementById('view_hide_fill').addEventListener('click', function() {
+        var passwordInput = document.getElementById('password');
+        var viewFill = document.getElementById('view_fill');
+        var viewHideFill = document.getElementById('view_hide_fill');
+        if (passwordInput.type === 'text') {
+            passwordInput.type = 'password';
+            viewFill.style.display = 'block';
+            viewHideFill.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>

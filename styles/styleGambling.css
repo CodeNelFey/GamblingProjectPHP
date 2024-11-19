@@ -1,28 +1,73 @@
 @font-face {
-    font-family: 'MyCustomFont';
-    src: url('../font/coolvetica compressed hv.otf') format('opentype');
+    font-family: 'coolvetica';
+    src: url('../font/coolvetica rg.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     background-color: rgb(10, 14, 22);
-    font-family: 'coolverica', sans-serif;
+    font-family: 'coolvetica', sans-serif;
 }
 
 .user-info {
+    z-index: 100;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    height: 40px;
+    left: 5%;
     margin: 2em auto;
-    background-color: red;
-    position: relative;
     padding: 5px;
-    border-radius: 0.375rem;
+    border-radius: 1000px;
     background-color: rgba(17, 24, 39, 1);
-    box-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+    box-shadow: rgba(167, 139, 250, 0.3) 0 0 15px;
     border: rgba(167, 139, 250, 1) solid 2px;
+}
+
+.user-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.user-info p img {
+    margin-right: 10px;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    padding: 8px 20px;
+    font-family: 'coolvetica', sans-serif;
+    border-radius: 1000px;
+    background-color: rgba(167, 139, 250, 1);
+    border: none;
+    color: rgba(243, 244, 246, 1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.logout-button svg  {
+    margin-left: 10px;
+}
+
+.logout-button:hover {
+    background-color: #fff;
+    color: rgba(167, 139, 250, 1);
+}
+
+.logout-button:hover svg path:first-of-type {
+    fill: rgba(167, 139, 250, 1);
+}
+
+.logout-button:hover svg path:nth-of-type(2) {
+    stroke: rgba(167, 139, 250, 1);
 }
 
 .user-info .name {
@@ -35,76 +80,299 @@ body {
     margin-right: 20px;
 }
 .game {
-    height: 90em;
+    height: 40em;
     padding: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width:75%;
 }
 
-.game #gambleButton {
-    width: 80%;
-    height: 20%;
-    border-radius: 0.375rem;
-    background-color: rgba(17, 24, 39, 1);
-    box-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
-    border: rgba(167, 139, 250, 1) solid 2px;
-    color: rgba(243, 244, 246, 1);
-    transition: 0.3s;
-}
-
-.game #gambleButton:hover {
-    box-shadow: rgba(167, 139, 250, 0.5) 0px 0px 15px;
-    border: rgba(167, 139, 250, 1) solid 2px;
-    color: rgba(243, 244, 246, 1);
-    transform: scale(1.05);
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
 }
 
 .game button {
-    margin: 5px;
+    margin: 50px;
     padding: 10px;
     border-radius: 0.375rem;
     background-color: rgba(17, 24, 39, 1);
-    box-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+    box-shadow: rgba(167, 139, 250, 0.3) 0 0 15px;
     border: rgba(167, 139, 250, 1) solid 2px;
     color: rgba(243, 244, 246, 1);
+    cursor: pointer;
     transition: 0.3s;
 }
 
 .game button:hover {
-    box-shadow: rgba(167, 139, 250, 0.5) 0px 0px 15px;
+    box-shadow: rgba(167, 139, 250, 0.5) 0 0 15px;
     border: rgba(167, 139, 250, 1) solid 2px;
     color: rgba(243, 244, 246, 1);
-    transform: scale(1.05);
 }
 
-.game .select-menu {
+.game button:active {
+    transform: scale(0.95);
+}
+
+.game #gambleButton {
+    width: 200px;
+    height: 200px;
+    border-radius: 1000px;
+    font-size: 2.5em;
+    font-family: 'coolvetica', sans-serif;
+    background-image: url("../imgs/gambling_piece.png");
+    background-size: 200px;
+    box-shadow: rgba(167, 139, 250, 0.3) 0 0 15px;
+    color: #1a1a1a;
+    border: none;
+    transition: 0.3s;
+}
+
+.game #gambleButton:hover {
+    box-shadow: rgba(167, 139, 250, 0.5) 0 0 15px;
+}
+
+.game #gambleButton:active {
+    transform: scale(0.95);
+}
+
+.filter-switch {
+    border: 2px solid rgba(167, 139, 250, 1);
+    border-radius: 30px;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 50px;
-    border-radius: 0.375rem;
+    width: 400px;
+    overflow: hidden;
+}
+.filter-switch input {
+    display: none;
+}
+.filter-switch label {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.5s;
+    font-weight: 500;
+    font-size: 18px;
+}
+.filter-switch .background {
+    position: absolute;
+    width: 24%;
+    height: 83%;
+    background-color: rgba(167, 139, 250, 1);
+    top: 4px;
+    left: 4px;
+    border-radius: 30px;
+    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#bet100:checked ~ .background {
+    left: 1%;
+}
+#bet1000:checked ~ .background {
+    left: 26%;
+}
+#x2:checked ~ .background {
+    left: 50%;
+}
+#allIn:checked ~ .background {
+    left: 75%;
+}
+#bet100:checked + label[for="bet100"],
+#bet1000:checked + label[for="bet1000"],
+#x2:checked + label[for="x2"],
+#allIn:checked + label[for="allIn"] {
+    color: #212121;
+    font-weight: bold;
+}
+#bet100:not(:checked) + label[for="bet100"],
+#bet1000:not(:checked) + label[for="bet1000"],
+#x2:not(:checked) + label[for="x2"],
+#allIn:not(:checked) + label[for="allIn"] {
+    color: #7d7d7d;
+}
+
+.leaderboard {
+    width: 25%;
+    margin-top: 100px;
+    height: 80%;
+    padding: 20px;
     background-color: rgba(17, 24, 39, 1);
+    border-radius: 10px;
     box-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
     border: rgba(167, 139, 250, 1) solid 2px;
     color: rgba(243, 244, 246, 1);
-    transition: 0.3s;
 }
 
-.game .select-menu button {
-    margin: 5px;
+.leaderboard h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.leaderboard ul {
+    list-style-type: none;
     padding: 10px;
-    border-radius: 0.375rem;
-    background-color: rgb(10, 14, 22);
-    color: rgba(243, 244, 246, 1);
-    border: rgb(10, 14, 22) solid 2px;
-    box-shadow: none;
-    transition: 0.3s;
 }
 
-.game .select-menu button.selected {
-    background-color: rgba(167, 139, 250, 1);
-    border: rgba(167, 139, 250, 1) solid 2px;
-    color: rgba(17, 24, 39, 1);
+.leaderboard li {
+    padding: 5px;
+    display: flex;
+    text-align: left;
+    border-bottom: solid rgba(255, 255, 255, 0.20) 1px;
+    height: 30px;
+}
+
+.leaderboard li p {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.leaderboard .rank {
+    flex: 0 0 30px;
+}
+
+.leaderboard .name {
+    flex: 1;
+    text-align: left;
+}
+
+.leaderboard .money {
+    flex: 0 0 150px;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.gold {
+    padding: 0;
+    border: none;
+    border-radius: 1000px;
+    background: linear-gradient(to right, #77530a, #ffd277, #77530a, #77530a, #ffd277, #77530a);
+    background-size: 250%;
+    background-position: left;
+    color: #ffd277;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.gold p {
+    color: #ffd277;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 0 10px;
+}
+
+.gold:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.gold:hover p {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.silver {
+    padding: 0;
+    border: none;
+    border-radius: 1000px;
+    background: linear-gradient(to right, #6e6e6e, #c0c0c0, #6e6e6e, #6e6e6e, #c0c0c0, #6e6e6e);
+    background-size: 250%;
+    background-position: left;
+    color: #c0c0c0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.silver p {
+    color: #c0c0c0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 0 10px;
+}
+
+.silver:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.silver:hover p {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.bronze {
+    padding: 0;
+    border: none;
+    border-radius: 1000px;
+    background: linear-gradient(to right, #8c5a2b, #cd7f32, #8c5a2b, #8c5a2b, #cd7f32, #8c5a2b);
+    background-size: 250%;
+    background-position: left;
+    color: #cd7f32;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition-duration: 1s;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.bronze p {
+    color: #cd7f32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    border-radius: 1000px;
+    transition-duration: 1s;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding: 0 10px;
+}
+
+.bronze:hover {
+    background-position: right;
+    transition-duration: 1s;
+}
+
+.bronze:hover p {
+    background-position: right;
+    transition-duration: 1s;
 }

@@ -13,7 +13,8 @@ if (isset($_SESSION['user_id']) && isset($_POST['money'])) {
     $stmt->execute();
 
     $_SESSION['user_money'] = $newMoney;
-    echo json_encode(['success' => true]);
+    $moneyWithSvg = "<img src='./imgs/Dimond_alt.svg' alt=''> " . $newMoney;
+    echo json_encode(['success' => true, 'money' => $moneyWithSvg]);
 } else {
     echo json_encode(['success' => false, 'message' => 'User not logged in or money not set']);
 }
