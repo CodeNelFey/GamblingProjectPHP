@@ -12,7 +12,6 @@ body {
 
 .user-info {
     z-index: 100;
-    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +201,7 @@ body {
 }
 
 .leaderboard {
-    width: 25%;
+    min-width: 350px;
     margin-top: 100px;
     height: 80%;
     padding: 20px;
@@ -375,4 +374,34 @@ body {
 .bronze:hover p {
     background-position: right;
     transition-duration: 1s;
+}
+
+
+@media (max-width: 1000px) {
+
+    body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .game   {
+        width: 100%;
+        margin: 0;
+    }
+
+    .leaderboard {
+        margin: 0;
+    }
 }
