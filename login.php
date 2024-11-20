@@ -67,12 +67,38 @@ session_start();
             header("Location: index.php");
             exit();
         } else {
-            // Connexion échouée
-            echo "<p class='notif-msg-bad'>Nom ou mot de passe incorrect.</p>";
+            $message = "Nom ou mot de passe incorrect.";
         }
     }
     ?>
 </div>
+
+<?php if (isset($message)): ?>
+    <div id="errorPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p><?php echo $message; ?></p>
+        </div>
+    </div>
+    <script>
+        var popup = document.getElementById('errorPopup');
+        var span = document.getElementsByClassName('close')[0];
+
+        popup.style.display = 'block';
+
+        span.onclick = function() {
+            popup.style.display = 'none';
+            window.location.href = 'login.php';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = 'none';
+                window.location.href = 'login.php';
+            }
+        }
+    </script>
+<?php endif; ?>
 
 <script>
     document.getElementById('view_fill').addEventListener('click', function() {

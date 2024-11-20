@@ -14,8 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $stmt = $db->prepare("INSERT INTO user (name, email, password, money) VALUES (?, ?, ?, 1000)");
         $stmt->execute([$username, $email, $hashed_password]);
-        header('Location: login.php');
-        exit();
+
+        if ($stmt) {
+            header('Location: login.php');
+            exit();
+        } else {
+            $message = "Failed to create account.";
+        }
     } else {
         $message = "Les mots de passes ne sont pas identiques.";
     }
