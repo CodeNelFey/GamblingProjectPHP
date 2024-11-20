@@ -98,7 +98,7 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
             var backgroundSpan = document.querySelector('.background');
             var gambleImage = document.getElementById('gambleButton');
             backgroundSpan.classList.remove('goldbg');
-            gambleImage.style.backgroundImage = 'url("../imgs/gambling_piece.png")'
+            gambleImage.style.backgroundImage = 'url("./imgs/gambling_piece.png")'
             gambleImage.textContent = '1/2'
             gambleImage.style.color = '#212121'
         }
@@ -109,7 +109,7 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
             var backgroundSpan = document.querySelector('.background');
             var gambleImage = document.getElementById('gambleButton');
             backgroundSpan.classList.remove('goldbg');
-            gambleImage.style.backgroundImage = 'url("../imgs/gambling_piece.png")'
+            gambleImage.style.backgroundImage = 'url("./imgs/gambling_piece.png")'
             gambleImage.textContent = '100'
             gambleImage.style.color = '#212121'
         }
@@ -120,7 +120,7 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
             var backgroundSpan = document.querySelector('.background');
             var gambleImage = document.getElementById('gambleButton');
             backgroundSpan.classList.remove('goldbg');
-            gambleImage.style.backgroundImage = 'url("../imgs/gambling_piece.png")'
+            gambleImage.style.backgroundImage = 'url("./imgs/gambling_piece.png")'
             gambleImage.textContent = '1000'
             gambleImage.style.color = '#212121'
         }
@@ -131,7 +131,7 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
             var backgroundSpan = document.querySelector('.background');
             var gambleImage = document.getElementById('gambleButton');
             backgroundSpan.classList.add('goldbg');
-            gambleImage.style.backgroundImage = 'url("../imgs/gambling_piece_gold.png")'
+            gambleImage.style.backgroundImage = 'url("./imgs/gambling_piece_gold.png")'
             gambleImage.textContent = 'All IN'
             gambleImage.style.color = '#fff'
         }
