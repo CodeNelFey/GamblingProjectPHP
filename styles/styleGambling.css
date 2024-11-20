@@ -42,7 +42,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: 20px;
-    padding: 8px 20px;
+    padding: 0 20px;
     font-family: 'coolvetica', sans-serif;
     border-radius: 1000px;
     background-color: rgba(167, 139, 250, 1);
@@ -376,6 +376,13 @@ body {
     transition-duration: 1s;
 }
 
+footer {
+    height: 300px;
+    width: 100%;
+    margin-top: 300px;
+    background-color: rgb(4, 6, 9);
+}
+
 
 @media (max-width: 1000px) {
 
@@ -385,12 +392,12 @@ body {
         align-items: center;
         flex-direction: column;
         margin: 0;
-        padding: 0;
+        padding: 0px;
     }
 
     .container {
         flex-direction: column;
-        padding: 0;
+        padding: 0px;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -403,5 +410,24 @@ body {
 
     .leaderboard {
         margin: 0;
+        min-width: 350px;
+    }
+
+    .logout-button {
+        padding: 10px 0;
+        height: 44px;
+        width: 44px;
+    }
+
+    .logout-button p{
+        display: none;
+    }
+
+    .logout-button svg  {
+        margin: 0;
+    }
+
+    .game {
+        transform: scale(.80);
     }
 }
