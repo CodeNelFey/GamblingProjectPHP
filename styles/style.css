@@ -180,12 +180,6 @@ body {
     color: #fff;
 }
 
-.form-container > p {
-    color: rgba(167, 139, 250, 1);
-    font-size: 3em;
-    margin: 0;
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -194,5 +188,16 @@ body {
 
 .form .sign{
     margin-top: 20px;
+}
+
+.dynamic-font-size {
+    font-size: 10git vw; /* Start with a large font size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    display: block;
+    margin: 0;
+    color: rgba(167, 139, 250, 1);
 }
 

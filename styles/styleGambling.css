@@ -84,7 +84,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width:75%;
 }
 
@@ -228,7 +227,7 @@ body {
     padding: 20px;
     background-color: rgba(17, 24, 39, 1);
     border-radius: 10px;
-    box-shadow: rgba(167, 139, 250, 0.3) 0px 0px 15px;
+    box-shadow: rgba(167, 139, 250, 0.3) 0 0 15px;
     border: rgba(167, 139, 250, 1) solid 2px;
     color: rgba(243, 244, 246, 1);
 }
@@ -415,6 +414,29 @@ footer {
     transform: scale(1.1);
 }
 
+.function-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.function-link a {
+    background-color: rgba(167, 139, 250, 1);
+    width: 30%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+    margin-bottom: 50px;
+}
+
+.function-link a:hover {
+    color: rgba(167, 139, 250, 1);
+    background-color: #fff;
+}
+
 
 @media (max-width: 1000px) {
 
@@ -442,7 +464,19 @@ footer {
 
     .leaderboard {
         margin: 0;
-        min-width: 350px;
+        min-width: 250px;
+    }
+
+    .leaderboard li {
+        height: 60px;
+    }
+
+    .leaderboard li p {
+        flex-direction: column;
+    }
+
+    .leaderboard .rank {
+        flex: 0 0 10px;
     }
 
     .logout-button {

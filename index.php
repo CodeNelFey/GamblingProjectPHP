@@ -18,7 +18,6 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
     echo "<div class='user-info'>
             <p class='name'><img src='./imgs/User_fill.svg' alt=''>$username</p>
             <p class='money' id='money'><img src='./imgs/Dimond_alt.svg' alt=''>$money \$</p>
-            <a href='virement.php' class='button virement'>Virement</a>
             <div class='infouser'>
                 <form action='logout.php' method='post'>
                     <button type='submit' class='logout-button'><p>Déconnexion</p>
@@ -34,6 +33,11 @@ if (isset($_SESSION['user_name']) && isset($_SESSION['user_money'])) {
     echo "<p class='notif-msg-bad'>Informations utilisateur non disponibles. <br> Vous n'êtes pas connecté, merci de vous reconnecter. <a href='login.php'>Se connecter</a></p>";
 }
 ?>
+<div class="function-link">
+    <a href='virement.php' class='button virement'>Virement</a>
+    <a href='virement.php' class='button virement' style="background-color: #6e6e6e; cursor: wait; color: #7d7d7d">Versus</a>
+    <a href='virement.php' class='button virement' style="background-color: #6e6e6e; cursor: wait;  color: #7d7d7d">Boutique</a>
+</div>
 
 <div class="container">
     <div class="game">

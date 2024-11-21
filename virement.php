@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 <div class="form-container">
     <h2 class="title">Virement</h2>
-    <p><?php echo number_format($user_money, 2); ?> €</p>
+    <p class="dynamic-font-size"><?php echo number_format($user_money, 2); ?> €</p>
     <form class="form" action="virement.php" method="post">
         <div class="input-group">
             <label for="recipient">Nom du destinataire</label>
